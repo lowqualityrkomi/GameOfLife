@@ -14,3 +14,25 @@ You start with a two dimensional grid of cells, where each cell is either alive 
 ```
 
 You should write a program that starts with a random grid of cells, and will output a similar grid showing the next generation.
+
+## Project structure
+All the code is stored into the Code folder.
+
+The code folder has a Program.cs that is the main of the project.
+All the classes are stored into the folder `src/Modules`
+
+### Grid
+Contains all the logics of the game of life.
+There is a constructor to initialize a Grid and 2 public methods that could be used:
+- Print => Print into the console the grid status
+- Next => Run a new generation
+
+All other methods are private and used inside the Grid class.
+
+### Cell
+Contains the cell management.
+
+A cell could be Alive (_isAlive = true) or Death (_isAlive = false) and could have some alive neighbors (_aliveNeighbors).
+
+There are public 2 getters (to show outside the class the status of the private attributes _isAlive and _aliveNeighbors) and 2 public setters (to set the value of _isAlive and _aliveNeighbors).
+
