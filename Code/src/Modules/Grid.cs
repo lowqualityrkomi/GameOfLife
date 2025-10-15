@@ -58,11 +58,11 @@ public class Grid
                 nextGeneration[row, col] = new Cell(currentCell.IsAlive);
                 
                 // Check if the cell is alive and should die
-                if(currentCell.IsAlive && ShouldDie(currentCell.AliveNeighbors))
+                if(currentCell.IsAlive && currentCell.ShouldDie())
                     nextGeneration[row, col].SetIsAlive(false);
                 
                 // Check if the cell is death and should reborn
-                else if(!currentCell.IsAlive && ShouldReborn(currentCell.AliveNeighbors))
+                else if(!currentCell.IsAlive && currentCell.ShouldReborn())
                     nextGeneration[row, col].SetIsAlive(true);
             }
         }
