@@ -34,6 +34,6 @@ Contains the cell management.
 
 A cell could be Alive (_isAlive = true) or Death (_isAlive = false) and could have some alive neighbors (_aliveNeighbors).
 
-There are public 2 getters (to show outside the class the status of the private attributes _isAlive and _aliveNeighbors), 2 public setters (to set the value of _isAlive and _aliveNeighbors) and 2 public boolean methods to check if a cell should die or should alive.
+There are public 2 getters (to show outside the class the status of the private attributes _isAlive and _aliveNeighbors), 2 public setters (to set the value of _isAlive and _aliveNeighbors) and 2 public boolean methods to check if a cell should die or should reborn.
 
 
