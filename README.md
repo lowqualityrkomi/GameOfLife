@@ -22,7 +22,7 @@ The code folder has a Program.cs that is the main of the project.
 All the classes are stored into the folder `src/Modules`
 
 ### Grid
-Contains all the logics of the game of life.
+Contains all the logics of `Game of life`.
 There is a constructor to initialize a Grid and 2 public methods that could be used:
 - Print => Print into the console the grid status
 - Next => Run a new generation
