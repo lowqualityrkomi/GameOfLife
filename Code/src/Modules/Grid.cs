@@ -70,24 +70,6 @@ public class Grid
         _cells = nextGeneration;
     }
 
-    // Method to check if the cell should die based on how many alive neighbors has
-    // Any live cell with fewer than two live neighbours dies, as if caused by underpopulation
-    // Any live cell with more than three live neighbours dies, as if by overcrowding
-    private bool ShouldDie(int aliveNeighbors)
-    {
-        bool isUnderPopulation = aliveNeighbors < 2;
-        bool isOverCrowding = aliveNeighbors > 3;
-
-        return isUnderPopulation || isOverCrowding;
-    }
-    
-    // Method to check if the cell should reborn based on how many alive neighbors has
-    // Any dead cell with exactly three live neighbours becomes a live cell
-    private bool ShouldReborn(int aliveNeighbors)
-    {
-        return aliveNeighbors == 3;
-    }
-
     // Method to count and return the current alive neighbors of a cell
     private int CountAliveNeighbors(int row, int column)
     {
