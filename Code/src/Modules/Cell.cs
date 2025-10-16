@@ -1,11 +1,13 @@
+using Code.Helpers;
+using Microsoft.VisualBasic;
+
 namespace Code.Modules;
 
 public class Cell
 {
     private bool _isAlive;
     private int _aliveNeighbors;
-
-    // Cell constructor
+    
     public Cell(bool isAlive)
     {
         _isAlive = isAlive;
@@ -29,8 +31,8 @@ public class Cell
     
     public bool ShouldDie()
     {
-        bool isUnderPopulation = _aliveNeighbors < 2;
-        bool isOverCrowding = _aliveNeighbors > 3;
+        bool isUnderPopulation = _aliveNeighbors < GameOfLifeConstants.MinimumNumberUnderPopulation;
+        bool isOverCrowding = _aliveNeighbors > GameOfLifeConstants.MaximumNumberOverCrowding;
 
         return isUnderPopulation || isOverCrowding;
     }
@@ -39,6 +41,6 @@ public class Cell
     // Any dead cell with exactly three live neighbours becomes a live cell
     public bool ShouldReborn()
     {
-        return _aliveNeighbors == 3;
+        return _aliveNeighbors == GameOfLifeConstants.AliveNeighborsNeededToReborn;
     }
 }

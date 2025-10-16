@@ -1,3 +1,5 @@
+using Code.Helpers;
+
 namespace Code.Modules;
 
 public class Grid
@@ -6,8 +8,7 @@ public class Grid
 
     private int _columns;
     private int _rows;
-
-    // Grid constructor
+    
     public Grid(int columns, int rows, int seed)
     {
         // Check if the provided columns and rows are valid
@@ -59,11 +60,11 @@ public class Grid
                 
                 // Check if the cell is alive and should die
                 if(currentCell.IsAlive && currentCell.ShouldDie())
-                    nextGeneration[row, col].SetIsAlive(false);
+                    nextGeneration[row, col].SetIsAlive(GameOfLifeConstants.DeadState);
                 
                 // Check if the cell is death and should reborn
                 else if(!currentCell.IsAlive && currentCell.ShouldReborn())
-                    nextGeneration[row, col].SetIsAlive(true);
+                    nextGeneration[row, col].SetIsAlive(GameOfLifeConstants.AliveState);
             }
         }
         
